@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+img {
+  border-radius: 8px;
+}
+</style>
+<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body>
+
+<h2>Lock #1</h2>
+<p>Match each set of emojis with the correct scripture story on the right.</p>
+<div class="row">
+  <div class="column">
+    <h2>Emoji Stories</h2>
+    <img src="https://assets.ldscdn.org/20/0f/200f8ff43d2329472151b9b0bb397ed744d3f2c2/quiz_book_emoji.png" alt="scripture stories", width="350" height="400">
+  </div>
+
+  <div class="column">
+    <h2>Answer Options</h2>
+    <p>A. Moses</p>
+    <p>B. Jacob & Rebeca</p>
+    <p>C. Samson</p>
+    <p>D. Esther</p>
+    <p>E. Cain & Abel</p>
+  </div>
+</div>
+
+<div>
+  <br><br><br><br><br><br><br><br>
+  <form action="">
+    <label for="name_options">Story #1:</label>
+    <select name="story1" id="story1">
+      <option value="blank"> </option>
+      <option value="M">Moses</option>
+      <option value="JR">Jacob & Rebeca</option>
+      <option value="S">Samson</option>
+      <option value="E">Esther</option>
+      <option value="CA">Cain & Abel</option>
+    </select>
+    <br><br>
+
+    <label for="name_options">Story #2:</label>
+    <select name="story2" id="story2">
+      <option value="blank"> </option>
+      <option value="M">Moses</option>
+      <option value="JR">Jacob & Rebeca</option>
+      <option value="S">Samson</option>
+      <option value="E">Esther</option>
+      <option value="CA">Cain & Abel</option>
+    </select>
+    <br><br>
+
+    <label for="name_options">Story #3:</label>
+    <select name="story3" id="story3">
+      <option value="blank"> </option>
+      <option value="M">Moses</option>
+      <option value="JR">Jacob & Rebeca</option>
+      <option value="S">Samson</option>
+      <option value="E">Esther</option>
+      <option value="CA">Cain & Abel</option>
+    </select>
+    <br><br>
+
+    <label for="name_options">Story #4:</label>
+    <select name="story4" id="story4">
+      <option value="blank"> </option>
+      <option value="M">Moses</option>
+      <option value="JR">Jacob & Rebeca</option>
+      <option value="S">Samson</option>
+      <option value="E">Esther</option>
+      <option value="CA">Cain & Abel</option>
+    </select>
+    <br><br>
+
+  <form onsubmit="return false">
+    <label for="name_options">Story #5:</label>
+    <select name="story5" id="story5">
+      <option value="blank"> </option>
+      <option value="M">Moses</option>
+      <option value="JR">Jacob & Rebeca</option>
+      <option value="S">Samson</option>
+      <option value="E">Esther</option>
+      <option value="CA">Cain & Abel</option>
+    </select>
+    <br><br>
+    <input pys-onClick="check" type="submit" value="Submit" id="btn-form">
+
+  </form>
+</div>
+<p>Output:</p>
+<p id = 'output'></p>
+<py-script>
+
+  def check(*args,**kwargs):
+      message = Element('output')
+      if Element('story1').value == "E":  
+        message.write("Correct!")
+      else:
+        message.write("Incorrect!")
+
+</py-script>
+
+</body>
+</html>
